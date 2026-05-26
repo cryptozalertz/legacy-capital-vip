@@ -8,6 +8,8 @@ class RealtimeData {
         this.solPrice = 0;
         this.fearGreed = 50;
         this.marketCap = 0;
+        this.btcDominance = 0;
+        this.volume24h = 0;
         this.updateInterval = 30000; // 30 seconds
         this.init();
     }
@@ -22,7 +24,8 @@ class RealtimeData {
         await Promise.all([
             this.fetchPrices(),
             this.fetchFearGreed(),
-            this.fetchMarketData()
+            this.fetchMarketData(),
+            this.fetchTrendingCoins()
         ]);
         this.updateUI();
     }
@@ -99,6 +102,8 @@ class RealtimeData {
             
             if (data.data) {
                 this.marketCap = data.data.total_market_cap.usd;
+                this.btcDominance = data.data.market_cap_percentage.btc;
+                this.volume24h = data.data.total_volume.usd;
                 const marketChange = data.data.market_cap_change_percentage_24h_usd;
                 
                 // Update market cap in hero stats
@@ -122,10 +127,48 @@ class RealtimeData {
                     marketChangeElement.className = marketChange >= 0 ? 'stat positive' : 'stat negative';
                 }
                 
-                console.log('Market cap updated:', this.marketCap, 'Change:', marketChange);
+                // Update BTC dominance
+                const dominanceElement = document.getElementById('btc-dominance');
+                if (dominanceElement) {
+                    dominanceElement.textContent = `${this.btcDominance.toFixed(1)}%`;
+                }
+                
+                // Update 24h volume
+                const volumeElement = document.getElementById('volume-24h');
+                if (volumeElement) {
+                    const billions = (this.volume24h / 1e9).toFixed(1);
+                    volumeElement.textContent = `$${billions}B`;
+                }
+                
+                console.log('Market data updated:', { cap: this.marketCap, dominance: this.btcDominance, volume: this.volume24h });
             }
         } catch (error) {
             console.error('Error fetching market data:', error);
+        }
+    }
+
+    async fetchTrendingCoins() {
+        try {
+            const response = await fetch('https://api.coingecko.com/api/v3/search/trending');
+            const data = await response.json();
+            
+            if (data.coins && data.coins.length > 0) {
+                // Update top movers
+                const topMoversContainer = document.getElementById('top-movers-list');
+                if (topMoversContainer) {
+                    topMoversContainer.innerHTML = data.coins.slice(0, 5).map(coin => `
+                        <div class="mover-item">
+                            <span class="mover-name">${coin.item.name}</span>
+                            <span class="mover-symbol">${coin.item.symbol}</span>
+                            <span class="mover-rank">#${coin.item.market_cap_rank}</span>
+                        </div>
+                    `).join('');
+                }
+                
+                console.log('Trending coins updated:', data.coins.length);
+            }
+        } catch (error) {
+            console.error('Error fetching trending coins:', error);
         }
     }
 
