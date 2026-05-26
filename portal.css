@@ -3,6 +3,11 @@
 /* Navbar with Centered Logo */
 .navbar {
     transition: all 0.4s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .navbar .container {
@@ -11,6 +16,7 @@
     align-items: center;
     height: 470px;
     transition: height 0.4s ease;
+    position: relative;
 }
 
 .navbar.scrolled .container {
@@ -34,6 +40,35 @@
 
 .navbar.scrolled .logo-center .logo-img {
     height: 60px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-left a, .nav-right a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-left a:hover, .nav-right a:hover,
+.nav-left a.active, .nav-right a.active {
+    color: var(--text);
+}
+
+.nav-left a.active::after, .nav-right a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(135deg, #f3f3f3 0%, #e0e0e0 100%);
 }
 
 /* Explore Navigation */
@@ -267,6 +302,10 @@ a.explore-card {
     .explore-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+    
+    .nav-left, .nav-right {
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -285,6 +324,14 @@ a.explore-card {
     .signals-grid,
     .analysis-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .nav-left, .nav-right {
+        gap: 0.75rem;
+    }
+    
+    .nav-left a, .nav-right a {
+        font-size: 0.875rem;
     }
 }
 
@@ -328,8 +375,12 @@ a.explore-card {
         height: 60px;
     }
     
-    .nav-links {
+    .nav-left, .nav-right {
         display: none;
+    }
+    
+    .logo-center .logo-img {
+        height: 50px;
     }
 }
 
