@@ -1,15 +1,14 @@
 /* Legacy Capital VIP Portal Styles */
 
-/* Logo Header */
+/* Logo Header - Above Navbar */
 .logo-header {
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
-    position: fixed;
+    position: relative;
     width: 100%;
-    top: 0;
     z-index: 1001;
-    padding: 15px 0;
+    padding: 20px 0;
     text-align: center;
     transition: all 0.4s ease;
 }
@@ -27,24 +26,15 @@
     transition: all 0.4s ease;
 }
 
-.logo-header.scrolled {
-    padding: 8px 0;
-}
-
-.logo-header.scrolled .logo-header-img {
-    height: 50px;
-}
-
-/* Navbar */
+/* Navbar - Below Logo */
 .navbar {
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
-    top: 150px;
     z-index: 1000;
-    transition: top 0.4s ease;
 }
 
 .navbar .container {
@@ -54,24 +44,15 @@
     height: 60px;
 }
 
-.logo-header.scrolled ~ .navbar {
-    top: 66px;
-}
-
 /* Explore Navigation */
 .explore-nav {
     background: rgba(0, 0, 0, 0.98);
     border-bottom: 1px solid var(--border);
-    position: fixed;
+    position: sticky;
+    top: 60px;
     width: 100%;
-    top: 210px;
     z-index: 999;
     padding: 0.5rem 0;
-    transition: top 0.4s ease;
-}
-
-.logo-header.scrolled ~ .explore-nav {
-    top: 126px;
 }
 
 .explore-toggle {
@@ -139,7 +120,7 @@
 
 /* Portal Hero */
 .portal-hero {
-    padding: 280px 0 60px;
+    padding: 40px 0 60px;
     background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
 }
 

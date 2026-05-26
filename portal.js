@@ -272,6 +272,7 @@ class SectionReveal {
 class LogoScrollEffect {
     constructor() {
         this.logoHeader = document.getElementById('logo-header');
+        this.logoImg = document.getElementById('logo-header-img');
         this.scrollThreshold = 50;
         this.init();
     }
@@ -285,9 +286,11 @@ class LogoScrollEffect {
         const scrollY = window.scrollY;
         
         if (scrollY > this.scrollThreshold) {
-            this.logoHeader.classList.add('scrolled');
+            this.logoHeader.style.padding = '8px 0';
+            this.logoImg.style.height = '50px';
         } else {
-            this.logoHeader.classList.remove('scrolled');
+            this.logoHeader.style.padding = '20px 0';
+            this.logoImg.style.height = '120px';
         }
     }
 }
