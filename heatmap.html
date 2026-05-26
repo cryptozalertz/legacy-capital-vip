@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Heatmap - Legacy Capital VIP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .heatmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 4px;
+            margin-top: 2rem;
+        }
+        .heatmap-item {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .heatmap-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+        .heatmap-item .coin-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        .heatmap-item .coin-price {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+        .heatmap-item .coin-change {
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+        .heatmap-legend {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-links">
+                <a href="portal.html">Portal</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="explore.html">Explore</a>
+                <a href="signals.html">Signals</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="alerts.html">Alerts</a>
+            </div>
+            <div class="user-menu">
+                <span class="vip-badge">VIP</span>
+                <span class="username">Captain</span>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Logo Header -->
+    <div class="logo-header" id="logo-header">
+        <div class="container">
+            <a href="portal.html"><img src="logo-transparent.png" alt="Legacy Capital VIP" class="logo-header-img" id="logo-header-img"></a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="portal-main" style="padding-top: 280px;">
+        <div class="container">
+            <section class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-fire"></i> Market Heatmap</h2>
+                    <span class="last-updated" id="last-updated">Last updated: Just now</span>
+                </div>
+
+                <!-- Time Period Selector -->
+                <div class="time-tabs">
+                    <button class="tab-btn active" data-period="1h">1H</button>
+                    <button class="tab-btn" data-period="24h">24H</button>
+                    <button class="tab-btn" data-period="7d">7D</button>
+                </div>
+
+                <!-- Heatmap Grid -->
+                <div class="heatmap-grid" id="heatmap-grid">
+                    <!-- Dynamically populated -->
+                </div>
+
+                <!-- Legend -->
+                <div class="heatmap-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ff4444;"></div>
+                        <span>-10% or more</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ff6b6b;"></div>
+                        <span>-5% to -10%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ff9999;"></div>
+                        <span>-2% to -5%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #666;"></div>
+                        <span>-2% to +2%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #99ff99;"></div>
+                        <span>+2% to +5%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #6bff6b;"></div>
+                        <span>+5% to +10%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #00ff00;"></div>
+                        <span>+10% or more</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="heatmap.js"></script>
+</body>
+</html>

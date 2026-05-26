@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Overview - Legacy Capital VIP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-links">
+                <a href="portal.html">Portal</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="explore.html">Explore</a>
+                <a href="signals.html">Signals</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="alerts.html">Alerts</a>
+            </div>
+            <div class="user-menu">
+                <span class="vip-badge">VIP</span>
+                <span class="username">Captain</span>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Logo Header -->
+    <div class="logo-header" id="logo-header">
+        <div class="container">
+            <a href="portal.html"><img src="logo-transparent.png" alt="Legacy Capital VIP" class="logo-header-img" id="logo-header-img"></a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="portal-main" style="padding-top: 280px;">
+        <div class="container">
+            <section class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-pie"></i> Market Overview</h2>
+                    <span class="last-updated" id="last-updated">Last updated: Just now</span>
+                </div>
+
+                <!-- Market Summary Cards -->
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <i class="fas fa-globe"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="total-market-cap">Loading...</span>
+                            <span class="stat-label">Total Market Cap</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="market-change">Loading...</span>
+                            <span class="stat-label">24h Change</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-percentage"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="btc-dominance">Loading...</span>
+                            <span class="stat-label">BTC Dominance</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-exchange-alt"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="volume-24h">Loading...</span>
+                            <span class="stat-label">24h Volume</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BTC Section -->
+                <div class="market-section">
+                    <h3><i class="fab fa-bitcoin"></i> Bitcoin (BTC)</h3>
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <i class="fas fa-dollar-sign"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="btc-price-detail">Loading...</span>
+                                <span class="stat-label">Current Price</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-arrow-up"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="btc-change-24h">Loading...</span>
+                                <span class="stat-label">24h Change</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-chart-bar"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="btc-market-cap">Loading...</span>
+                                <span class="stat-label">Market Cap</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-coins"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="btc-supply">Loading...</span>
+                                <span class="stat-label">Circulating Supply</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="btcChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Altcoins Section -->
+                <div class="market-section">
+                    <h3><i class="fas fa-coins"></i> Altcoins (Top 10)</h3>
+                    <div class="market-table-container">
+                        <table class="market-table" id="altcoins-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>24h %</th>
+                                    <th>7d %</th>
+                                    <th>Market Cap</th>
+                                    <th>Volume (24h)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="altcoins-tbody">
+                                <tr><td colspan="7">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Meme Coins Section -->
+                <div class="market-section">
+                    <h3><i class="fas fa-rocket"></i> Meme Coins (Top 10)</h3>
+                    <div class="market-table-container">
+                        <table class="market-table" id="memes-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>24h %</th>
+                                    <th>7d %</th>
+                                    <th>Market Cap</th>
+                                    <th>Volume (24h)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="memes-tbody">
+                                <tr><td colspan="7">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="market-overview.js"></script>
+</body>
+</html>

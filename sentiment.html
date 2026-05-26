@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Sentiment - Legacy Capital VIP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-links">
+                <a href="portal.html">Portal</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="explore.html">Explore</a>
+                <a href="signals.html">Signals</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="alerts.html">Alerts</a>
+            </div>
+            <div class="user-menu">
+                <span class="vip-badge">VIP</span>
+                <span class="username">Captain</span>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Logo Header -->
+    <div class="logo-header" id="logo-header">
+        <div class="container">
+            <a href="portal.html"><img src="logo-transparent.png" alt="Legacy Capital VIP" class="logo-header-img" id="logo-header-img"></a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="portal-main" style="padding-top: 280px;">
+        <div class="container">
+            <section class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-heart-pulse"></i> Market Sentiment</h2>
+                    <span class="last-updated" id="last-updated">Last updated: Just now</span>
+                </div>
+
+                <!-- Fear & Greed Index -->
+                <div class="market-section">
+                    <h3><i class="fas fa-gauge-high"></i> Fear & Greed Index</h3>
+                    <div class="sentiment-gauge-large">
+                        <div class="gauge-circle-large">
+                            <span class="gauge-value-large" id="fear-greed-value">50</span>
+                        </div>
+                        <span class="gauge-label-large" id="fear-greed-label">Neutral</span>
+                    </div>
+                    <div class="sentiment-scale">
+                        <div class="scale-item">Extreme Fear</div>
+                        <div class="scale-item">Fear</div>
+                        <div class="scale-item active">Neutral</div>
+                        <div class="scale-item">Greed</div>
+                        <div class="scale-item">Extreme Greed</div>
+                    </div>
+                </div>
+
+                <!-- Sentiment Metrics -->
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <i class="fas fa-comments"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="social-sentiment">Loading...</span>
+                            <span class="stat-label">Social Sentiment</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-bar"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="volatility-index">Loading...</span>
+                            <span class="stat-label">Volatility Index</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-water"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="liquidity-score">Loading...</span>
+                            <span class="stat-label">Liquidity Score</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-trending-up"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="momentum-score">Loading...</span>
+                            <span class="stat-label">Momentum Score</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hourly Updates -->
+                <div class="market-section">
+                    <h3><i class="fas fa-clock"></i> Hourly Sentiment History</h3>
+                    <div class="market-table-container">
+                        <table class="market-table" id="sentiment-history-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Fear & Greed</th>
+                                    <th>Social</th>
+                                    <th>Volatility</th>
+                                    <th>Overall</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sentiment-history-tbody">
+                                <tr><td colspan="5">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="sentiment.js"></script>
+</body>
+</html>

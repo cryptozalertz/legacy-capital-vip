@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Calendar - Legacy Capital VIP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-links">
+                <a href="portal.html">Portal</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="explore.html">Explore</a>
+                <a href="signals.html">Signals</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="alerts.html">Alerts</a>
+            </div>
+            <div class="user-menu">
+                <span class="vip-badge">VIP</span>
+                <span class="username">Captain</span>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Logo Header -->
+    <div class="logo-header" id="logo-header">
+        <div class="container">
+            <a href="portal.html"><img src="logo-transparent.png" alt="Legacy Capital VIP" class="logo-header-img" id="logo-header-img"></a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="portal-main" style="padding-top: 280px;">
+        <div class="container">
+            <section class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-calendar-alt"></i> Economic Calendar</h2>
+                    <span class="last-updated" id="last-updated">Last updated: Just now</span>
+                </div>
+
+                <!-- Event Filters -->
+                <div class="event-filters">
+                    <button class="filter-btn active" data-filter="all">All Events</button>
+                    <button class="filter-btn" data-filter="high">High Impact</button>
+                    <button class="filter-btn" data-filter="medium">Medium Impact</button>
+                    <button class="filter-btn" data-filter="low">Low Impact</button>
+                </div>
+
+                <!-- Events Table -->
+                <div class="market-section">
+                    <div class="market-table-container">
+                        <table class="market-table" id="calendar-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Currency</th>
+                                    <th>Event</th>
+                                    <th>Impact</th>
+                                    <th>Forecast</th>
+                                    <th>Previous</th>
+                                </tr>
+                            </thead>
+                            <tbody id="calendar-tbody">
+                                <tr><td colspan="7">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="calendar.js"></script>
+</body>
+</html>

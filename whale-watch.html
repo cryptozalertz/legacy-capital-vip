@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whale Watch - Legacy Capital VIP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-links">
+                <a href="portal.html">Portal</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="explore.html">Explore</a>
+                <a href="signals.html">Signals</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="alerts.html">Alerts</a>
+            </div>
+            <div class="user-menu">
+                <span class="vip-badge">VIP</span>
+                <span class="username">Captain</span>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Logo Header -->
+    <div class="logo-header" id="logo-header">
+        <div class="container">
+            <a href="portal.html"><img src="logo-transparent.png" alt="Legacy Capital VIP" class="logo-header-img" id="logo-header-img"></a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="portal-main" style="padding-top: 280px;">
+        <div class="container">
+            <section class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-fish"></i> Whale Watch</h2>
+                    <span class="last-updated" id="last-updated">Last updated: Just now</span>
+                </div>
+
+                <!-- Whale Stats -->
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <i class="fas fa-wallet"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="whale-count">Loading...</span>
+                            <span class="stat-label">Active Whales</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-arrow-down"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="exchange-inflow">Loading...</span>
+                            <span class="stat-label">Exchange Inflow (24h)</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-arrow-up"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="exchange-outflow">Loading...</span>
+                            <span class="stat-label">Exchange Outflow (24h)</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-balance-scale"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="netflow">Loading...</span>
+                            <span class="stat-label">Net Flow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Whale Transactions -->
+                <div class="market-section">
+                    <h3><i class="fas fa-exchange-alt"></i> Recent Whale Transactions</h3>
+                    <div class="market-table-container">
+                        <table class="market-table" id="whale-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>Amount</th>
+                                    <th>Value</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
+                            <tbody id="whale-tbody">
+                                <tr><td colspan="6">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Whale Categories -->
+                <div class="market-section">
+                    <h3><i class="fas fa-users"></i> Whale Categories</h3>
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <i class="fas fa-building"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="institutional-count">47</span>
+                                <span class="stat-label">Institutional</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-user-secret"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="private-count">123</span>
+                                <span class="stat-label">Private Whales</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-store"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="retail-count">892</span>
+                                <span class="stat-label">Retail Large</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="whale-watch.js"></script>
+</body>
+</html>
