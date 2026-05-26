@@ -268,6 +268,32 @@ class SectionReveal {
     }
 }
 
+// Scroll Effect for Logo
+class ScrollLogoEffect {
+    constructor() {
+        this.navbar = document.getElementById('navbar');
+        this.logoImg = document.getElementById('logo-img');
+        this.scrollThreshold = 100;
+        this.init();
+    }
+    
+    init() {
+        window.addEventListener('scroll', () => this.handleScroll());
+        // Initial check
+        this.handleScroll();
+    }
+    
+    handleScroll() {
+        const scrollY = window.scrollY;
+        
+        if (scrollY > this.scrollThreshold) {
+            this.navbar.classList.add('scrolled');
+        } else {
+            this.navbar.classList.remove('scrolled');
+        }
+    }
+}
+
 // Initialize Portal
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
@@ -276,6 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
     new PortalNavigation();
     new PriceTicker();
     new SectionReveal();
+    new ScrollLogoEffect();
     
     // Add loading animation to explore buttons
     document.querySelectorAll('.btn-explore').forEach(btn => {
