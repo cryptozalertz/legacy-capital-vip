@@ -39,11 +39,25 @@ class RealtimeData {
             this.ethChange = data.ethereum.usd_24h_change;
             this.solChange = data.solana.usd_24h_change;
             
-            // Update BTC price immediately
+            // Update BTC price
             const btcElement = document.getElementById('btc-price');
             if (btcElement) {
                 btcElement.textContent = '$' + this.btcPrice.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0});
                 btcElement.style.color = this.btcChange >= 0 ? '#f3f3f3' : '#ff4444';
+            }
+            
+            // Update ETH price
+            const ethElement = document.getElementById('eth-price');
+            if (ethElement) {
+                ethElement.textContent = '$' + this.ethPrice.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0});
+                ethElement.style.color = this.ethChange >= 0 ? '#f3f3f3' : '#ff4444';
+            }
+            
+            // Update SOL price
+            const solElement = document.getElementById('sol-price');
+            if (solElement) {
+                solElement.textContent = '$' + this.solPrice.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                solElement.style.color = this.solChange >= 0 ? '#f3f3f3' : '#ff4444';
             }
             
             console.log('Prices updated:', { btc: this.btcPrice, eth: this.ethPrice, sol: this.solPrice });
@@ -87,11 +101,18 @@ class RealtimeData {
                 this.marketCap = data.data.total_market_cap.usd;
                 const marketChange = data.data.market_cap_change_percentage_24h_usd;
                 
-                // Update market cap in explore card
-                const marketCapElement = document.getElementById('market-cap-stat');
+                // Update market cap in hero stats
+                const marketCapElement = document.getElementById('market-cap');
                 if (marketCapElement) {
                     const trillions = (this.marketCap / 1e12).toFixed(2);
-                    marketCapElement.textContent = `$${trillions}T Market Cap`;
+                    marketCapElement.textContent = `$${trillions}T`;
+                }
+                
+                // Update market cap in explore card
+                const marketCapStatElement = document.getElementById('market-cap-stat');
+                if (marketCapStatElement) {
+                    const trillions = (this.marketCap / 1e12).toFixed(2);
+                    marketCapStatElement.textContent = `$${trillions}T Market Cap`;
                 }
                 
                 const marketChangeElement = document.getElementById('market-change-stat');
@@ -120,6 +141,23 @@ class RealtimeData {
         
         // Update technical levels
         this.updateTechnicalLevels();
+        
+        // Update sentiment label
+        this.updateSentimentLabel();
+    }
+    
+    updateSentimentLabel() {
+        const sentimentElement = document.getElementById('sentiment');
+        if (sentimentElement) {
+            let label = 'Neutral';
+            if (this.fearGreed <= 20) label = 'Extreme Fear';
+            else if (this.fearGreed <= 40) label = 'Fear';
+            else if (this.fearGreed <= 60) label = 'Neutral';
+            else if (this.fearGreed <= 80) label = 'Greed';
+            else label = 'Extreme Greed';
+            
+            sentimentElement.textContent = label;
+        }
     }
     
     updateTechnicalLevels() {
