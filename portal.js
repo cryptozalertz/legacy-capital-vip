@@ -273,6 +273,8 @@ class LogoScrollEffect {
     constructor() {
         this.logoHeader = document.getElementById('logo-header');
         this.logoImg = document.getElementById('logo-header-img');
+        this.navbar = document.getElementById('navbar');
+        this.exploreNav = document.querySelector('.explore-nav');
         this.scrollThreshold = 50;
         this.init();
     }
@@ -288,9 +290,17 @@ class LogoScrollEffect {
         if (scrollY > this.scrollThreshold) {
             this.logoHeader.style.padding = '8px 0';
             this.logoImg.style.height = '50px';
+            this.navbar.style.top = '66px';
+            if (this.exploreNav) {
+                this.exploreNav.style.top = '126px';
+            }
         } else {
             this.logoHeader.style.padding = '20px 0';
             this.logoImg.style.height = '120px';
+            this.navbar.style.top = '160px';
+            if (this.exploreNav) {
+                this.exploreNav.style.top = '220px';
+            }
         }
     }
 }

@@ -5,8 +5,11 @@
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
-    position: relative;
+    position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1001;
     padding: 20px 0;
     text-align: center;
@@ -31,10 +34,13 @@
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: 160px;
+    left: 0;
+    right: 0;
     width: 100%;
     z-index: 1000;
+    transition: top 0.4s ease;
 }
 
 .navbar .container {
@@ -48,11 +54,14 @@
 .explore-nav {
     background: rgba(0, 0, 0, 0.98);
     border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 60px;
+    position: fixed;
+    top: 220px;
+    left: 0;
+    right: 0;
     width: 100%;
     z-index: 999;
     padding: 0.5rem 0;
+    transition: top 0.4s ease;
 }
 
 .explore-toggle {
@@ -120,7 +129,7 @@
 
 /* Portal Hero */
 .portal-hero {
-    padding: 40px 0 60px;
+    padding: 300px 0 60px;
     background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
 }
 
