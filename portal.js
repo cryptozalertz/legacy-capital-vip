@@ -271,8 +271,8 @@ class SectionReveal {
 // Scroll Effect for Logo
 class ScrollLogoEffect {
     constructor() {
-        this.navbar = document.getElementById('navbar');
-        this.logoImg = document.getElementById('logo-img');
+        this.logoSection = document.getElementById('logo-section');
+        this.logoMain = document.getElementById('logo-main');
         this.scrollThreshold = 100;
         this.init();
     }
@@ -287,9 +287,9 @@ class ScrollLogoEffect {
         const scrollY = window.scrollY;
         
         if (scrollY > this.scrollThreshold) {
-            this.navbar.classList.add('scrolled');
+            this.logoSection.classList.add('scrolled');
         } else {
-            this.navbar.classList.remove('scrolled');
+            this.logoSection.classList.remove('scrolled');
         }
     }
 }

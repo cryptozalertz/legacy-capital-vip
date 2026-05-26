@@ -1,45 +1,59 @@
 /* Legacy Capital VIP Portal Styles */
 
+/* Logo Section - Above Navbar */
+.logo-section {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1001;
+    padding: 20px 0;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.logo-section .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-main {
+    height: 400px;
+    width: auto;
+    object-fit: contain;
+    transition: all 0.4s ease;
+}
+
+.logo-section.scrolled {
+    padding: 5px 0;
+}
+
+.logo-section.scrolled .logo-main {
+    height: 50px;
+}
+
 /* Navbar with Centered Logo */
 .navbar {
     transition: all 0.4s ease;
     position: fixed;
-    top: 0;
+    top: 440px;
     left: 0;
     right: 0;
     z-index: 1000;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
 }
 
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 470px;
-    transition: height 0.4s ease;
-    position: relative;
-}
-
-.navbar.scrolled .container {
-    height: 80px;
-}
-
-.logo-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.4s ease;
-    z-index: 1001;
-}
-
-.logo-center .logo-img {
-    height: 450px;
-    width: auto;
-    object-fit: contain;
-    transition: all 0.4s ease;
-}
-
-.navbar.scrolled .logo-center .logo-img {
     height: 60px;
+    position: relative;
 }
 
 .nav-left, .nav-right {
@@ -77,14 +91,14 @@
     border-bottom: 1px solid var(--border);
     position: fixed;
     width: 100%;
-    top: 470px;
+    top: 500px;
     z-index: 999;
     padding: 0.5rem 0;
     transition: top 0.4s ease;
 }
 
-.navbar.scrolled + .explore-nav {
-    top: 80px;
+.logo-section.scrolled ~ .explore-nav {
+    top: 60px;
 }
 
 .explore-toggle {
@@ -152,8 +166,12 @@
 
 /* Portal Hero */
 .portal-hero {
-    padding: 590px 0 60px;
+    padding: 620px 0 60px;
     background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+}
+
+.logo-section.scrolled ~ .portal-hero {
+    padding: 140px 0 60px;
 }
 
 .portal-hero .hero-content h1 {
