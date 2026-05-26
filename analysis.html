@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis - Legacy Capital VIP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="portal.html"><img src="logo-transparent.png" alt="Legacy Capital VIP" class="logo-img"></a>
+            </div>
+            <div class="nav-links">
+                <a href="portal.html">Portal</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="explore.html">Explore</a>
+                <a href="signals.html">Signals</a>
+                <a href="analysis.html" class="active">Analysis</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="alerts.html">Alerts</a>
+            </div>
+            <div class="user-menu">
+                <span class="vip-badge">VIP</span>
+                <span class="username">Captain</span>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <div class="container">
+            <section class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-bar"></i> Market Analysis</h2>
+                </div>
+                
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h3>Whale Activity</h3>
+                        <div class="whale-indicator">
+                            <div class="whale-bar">
+                                <div class="whale-progress" style="width: 75%"></div>
+                            </div>
+                            <span class="whale-label">75% Buying Pressure</span>
+                        </div>
+                        <div class="whale-stats">
+                            <div class="whale-stat">
+                                <span class="label">Large Inflows</span>
+                                <span class="value positive">+$234M</span>
+                            </div>
+                            <div class="whale-stat">
+                                <span class="label">Active Whales</span>
+                                <span class="value">47</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Market Sentiment</h3>
+                        <div class="sentiment-gauge">
+                            <div class="gauge-circle">
+                                <span class="gauge-value" id="gauge-value">--</span>
+                            </div>
+                            <span class="gauge-label" id="gauge-label">Loading...</span>
+                        </div>
+                        <p class="sentiment-text" id="sentiment-text">Loading market sentiment data...</p>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Technical Levels</h3>
+                        <div class="levels-list">
+                            <div class="level-item">
+                                <span class="level-label">BTC Resistance</span>
+                                <span class="level-value" id="btc-resistance">Loading...</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">BTC Support</span>
+                                <span class="level-value" id="btc-support">Loading...</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">ETH Resistance</span>
+                                <span class="level-value" id="eth-resistance">Loading...</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">ETH Support</span>
+                                <span class="level-value" id="eth-support">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- On-Chain Metrics -->
+                <div class="section-header" style="margin-top: 3rem;">
+                    <h2><i class="fas fa-link"></i> On-Chain Metrics</h2>
+                </div>
+                
+                <div class="explore-grid">
+                    <div class="explore-card">
+                        <div class="explore-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3>Exchange Flows</h3>
+                        <p>Real-time exchange inflows and outflows</p>
+                        <div class="explore-stats">
+                            <span class="stat positive">+$45M In</span>
+                            <span class="stat negative">-$23M Out</span>
+                        </div>
+                    </div>
+
+                    <div class="explore-card">
+                        <div class="explore-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h3>Wallet Growth</h3>
+                        <p>New wallet creation and active addresses</p>
+                        <div class="explore-stats">
+                            <span class="stat">+12K New</span>
+                            <span class="stat">890K Active</span>
+                        </div>
+                    </div>
+
+                    <div class="explore-card">
+                        <div class="explore-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Network Activity</h3>
+                        <p>Transaction volume and gas fees</p>
+                        <div class="explore-stats">
+                            <span class="stat">2.4M TX/day</span>
+                            <span class="stat">45 Gwei</span>
+                        </div>
+                    </div>
+
+                    <div class="explore-card">
+                        <div class="explore-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Staking Data</h3>
+                        <p>Total value locked and staking rewards</p>
+                        <div class="explore-stats">
+                            <span class="stat">$45B TVL</span>
+                            <span class="stat">4.2% APY</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-crown"></i>
+                    <span>LEGACY CAPITAL VIP</span>
+                </div>
+                <p class="footer-text">Professional on-chain intelligence for elite traders</p>
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="realtime-data.js"></script>
+</body>
+</html>

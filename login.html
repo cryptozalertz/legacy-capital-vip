@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Capital VIP - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            padding: 2rem;
+        }
+        
+        .login-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+        }
+        
+        .login-logo {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .login-box h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .login-box p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .login-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .login-footer {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .login-footer p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        .vip-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .vip-feature {
+            padding: 1rem;
+            background: var(--dark);
+            border-radius: 12px;
+        }
+        
+        .vip-feature i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .vip-feature span {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-logo">
+                <i class="fas fa-crown"></i>
+            </div>
+            <h1>Legacy Capital VIP</h1>
+            <p>Professional-grade crypto intelligence</p>
+            
+            <div class="vip-features">
+                <div class="vip-feature">
+                    <i class="fas fa-bolt"></i>
+                    <span>Live Signals</span>
+                </div>
+                <div class="vip-feature">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Whale Tracking</span>
+                </div>
+                <div class="vip-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Risk Analysis</span>
+                </div>
+                <div class="vip-feature">
+                    <i class="fas fa-bell"></i>
+                    <span>Instant Alerts</span>
+                </div>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email or Username</label>
+                    <input type="text" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-btn">Access VIP Dashboard</button>
+            </form>
+            
+            <div class="login-footer">
+                <p>VIP members only. Contact @Cryptozalertz for access.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In production, this would validate credentials
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Legacy Capital VIP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0e27;
+            color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0f1535 100%);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #6366f1;
+        }
+        
+        .header-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        /* Stats Grid */
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 15px;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+        }
+        
+        .stat-box .number {
+            font-size: 22px;
+            font-weight: 700;
+            color: #6366f1;
+        }
+        
+        .stat-box .label {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+        
+        /* Section Title */
+        .section-title {
+            padding: 20px 15px 10px;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, #6366f1 0%, #22d3ee 100%);
+            border-radius: 2px;
+        }
+        
+        /* Signal Cards */
+        .signal-list {
+            padding: 0 15px;
+        }
+        
+        .signal-card {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-left: 4px solid;
+        }
+        
+        .signal-card.buy {
+            border-left-color: #10b981;
+        }
+        
+        .signal-card.sell {
+            border-left-color: #ef4444;
+        }
+        
+        .signal-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .signal-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .signal-badge.buy {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+        
+        .signal-badge.sell {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        
+        .signal-time {
+            color: #64748b;
+            font-size: 12px;
+        }
+        
+        .signal-pair {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .signal-price {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .signal-targets {
+            display: flex;
+            gap: 12px;
+            font-size: 13px;
+        }
+        
+        .signal-targets span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .target { color: #10b981; }
+        .stop { color: #ef4444; }
+        
+        /* Analysis Cards */
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            padding: 0 15px;
+        }
+        
+        .analysis-card {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 16px;
+        }
+        
+        .analysis-card h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #e2e8f0;
+        }
+        
+        /* Whale Bar */
+        .whale-bar-container {
+            margin: 12px 0;
+        }
+        
+        .whale-bar-bg {
+            height: 8px;
+            background: #0f172a;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .whale-bar-fill {
+            height: 100%;
+            width: 75%;
+            background: linear-gradient(90deg, #6366f1 0%, #22d3ee 100%);
+            border-radius: 4px;
+        }
+        
+        .whale-label {
+            text-align: center;
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 8px;
+        }
+        
+        /* Sentiment */
+        .sentiment-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #10b981 0%, #f59e0b 50%, #ef4444 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .sentiment-circle::before {
+            content: '';
+            width: 80px;
+            height: 80px;
+            background: #1e293b;
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .sentiment-value {
+            font-size: 28px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .sentiment-label {
+            text-align: center;
+            margin-top: 8px;
+            color: #f59e0b;
+            font-weight: 600;
+        }
+        
+        /* Levels */
+        .level-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .level-row:last-child {
+            border-bottom: none;
+        }
+        
+        .level-name {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        
+        .level-price {
+            font-weight: 600;
+            color: #6366f1;
+        }
+        
+        /* Portfolio */
+        .portfolio-item {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 16px;
+            margin: 0 15px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .portfolio-info h4 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+        
+        .portfolio-info .entry {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+        
+        .portfolio-pnl {
+            text-align: right;
+        }
+        
+        .portfolio-pnl .percent {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .portfolio-pnl .percent.positive {
+            color: #10b981;
+        }
+        
+        .portfolio-pnl .percent.negative {
+            color: #ef4444;
+        }
+        
+        .portfolio-pnl .signal {
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-top: 4px;
+            display: inline-block;
+        }
+        
+        .portfolio-pnl .signal.buy {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+        
+        /* Alerts */
+        .alert-item {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 16px;
+            margin: 0 15px 12px;
+            border-left: 4px solid;
+            display: flex;
+            gap: 12px;
+        }
+        
+        .alert-item.high { border-left-color: #ef4444; }
+        .alert-item.medium { border-left-color: #f59e0b; }
+        .alert-item.low { border-left-color: #22d3ee; }
+        
+        .alert-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .alert-item.high .alert-icon { color: #ef4444; }
+        .alert-item.medium .alert-icon { color: #f59e0b; }
+        .alert-item.low .alert-icon { color: #22d3ee; }
+        
+        .alert-content h4 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        
+        .alert-content p {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+        
+        .alert-time {
+            color: #64748b;
+            font-size: 12px;
+        }
+        
+        /* Bottom Nav */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1a1f3a;
+            border-top: 1px solid #334155;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            z-index: 1000;
+        }
+        
+        .nav-item {
+            text-align: center;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 11px;
+        }
+        
+        .nav-item.active {
+            color: #6366f1;
+        }
+        
+        .nav-item .icon {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        /* Footer spacing for bottom nav */
+        .content-end {
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-icon">👑</div>
+        <h1>LEGACY CAPITAL</h1>
+        <p>VIP Dashboard</p>
+    </div>
+    
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat-box">
+            <div class="number">$67.2K</div>
+            <div class="label">BTC Price</div>
+        </div>
+        <div class="stat-box">
+            <div class="number">72</div>
+            <div class="label">Fear & Greed</div>
+        </div>
+        <div class="stat-box">
+            <div class="number">24</div>
+            <div class="label">Signals</div>
+        </div>
+        <div class="stat-box">
+            <div class="number">+12.4%</div>
+            <div class="label">Performance</div>
+        </div>
+    </div>
+    
+    <!-- Signals -->
+    <div class="section-title">Live Signals</div>
+    <div class="signal-list">
+        <div class="signal-card buy">
+            <div class="signal-header">
+                <span class="signal-badge buy">STRONG BUY</span>
+                <span class="signal-time">2m ago</span>
+            </div>
+            <div class="signal-pair">BTC/USDT</div>
+            <div class="signal-price">Entry: $67,200</div>
+            <div class="signal-targets">
+                <span class="target">🎯 $72,000</span>
+                <span class="stop">🛡️ $65,800</span>
+            </div>
+        </div>
+        
+        <div class="signal-card buy">
+            <div class="signal-header">
+                <span class="signal-badge buy">BUY</span>
+                <span class="signal-time">15m ago</span>
+            </div>
+            <div class="signal-pair">ETH/USDT</div>
+            <div class="signal-price">Entry: $3,450</div>
+            <div class="signal-targets">
+                <span class="target">🎯 $3,800</span>
+                <span class="stop">🛡️ $3,320</span>
+            </div>
+        </div>
+        
+        <div class="signal-card sell">
+            <div class="signal-header">
+                <span class="signal-badge sell">SELL</span>
+                <span class="signal-time">1h ago</span>
+            </div>
+            <div class="signal-pair">SOL/USDT</div>
+            <div class="signal-price">Entry: $152.30</div>
+            <div class="signal-targets">
+                <span class="target">🎯 $140.00</span>
+                <span class="stop">🛡️ $158.00</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Analysis -->
+    <div class="section-title">Market Analysis</div>
+    <div class="analysis-grid">
+        <div class="analysis-card">
+            <h3>🐋 Whale Activity</h3>
+            <div class="whale-bar-container">
+                <div class="whale-bar-bg">
+                    <div class="whale-bar-fill"></div>
+                </div>
+                <div class="whale-label">75% Buying Pressure</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 12px; font-size: 14px;">
+                <span style="color: #94a3b8;">Inflows: <span style="color: #10b981; font-weight: 600;">+$234M</span></span>
+                <span style="color: #94a3b8;">Whales: <span style="font-weight: 600;">47</span></span>
+            </div>
+        </div>
+        
+        <div class="analysis-card">
+            <h3>📊 Market Sentiment</h3>
+            <div class="sentiment-circle">
+                <span class="sentiment-value">72</span>
+            </div>
+            <div class="sentiment-label">GREED</div>
+            <p style="text-align: center; color: #94a3b8; font-size: 13px; margin-top: 8px;">
+                Strong bullish sentiment with institutional accumulation
+            </p>
+        </div>
+        
+        <div class="analysis-card">
+            <h3>📈 Technical Levels</h3>
+            <div class="level-row">
+                <span class="level-name">BTC Resistance</span>
+                <span class="level-price">$68,500</span>
+            </div>
+            <div class="level-row">
+                <span class="level-name">BTC Support</span>
+                <span class="level-price">$65,200</span>
+            </div>
+            <div class="level-row">
+                <span class="level-name">ETH Resistance</span>
+                <span class="level-price">$3,600</span>
+            </div>
+            <div class="level-row">
+                <span class="level-name">ETH Support</span>
+                <span class="level-price">$3,280</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Portfolio -->
+    <div class="section-title">Portfolio</div>
+    <div class="portfolio-item">
+        <div class="portfolio-info">
+            <h4>BTC</h4>
+            <div class="entry">Entry: $65,400</div>
+        </div>
+        <div class="portfolio-pnl">
+            <div class="percent positive">+2.8%</div>
+            <span class="signal buy">HOLD</span>
+        </div>
+    </div>
+    <div class="portfolio-item">
+        <div class="portfolio-info">
+            <h4>ETH</h4>
+            <div class="entry">Entry: $3,280</div>
+        </div>
+        <div class="portfolio-pnl">
+            <div class="percent positive">+5.2%</div>
+            <span class="signal buy">BUY</span>
+        </div>
+    </div>
+    <div class="portfolio-item">
+        <div class="portfolio-info">
+            <h4>SOL</h4>
+            <div class="entry">Entry: $158.00</div>
+        </div>
+        <div class="portfolio-pnl">
+            <div class="percent negative">-3.6%</div>
+            <span class="signal sell">SELL</span>
+        </div>
+    </div>
+    
+    <!-- Alerts -->
+    <div class="section-title">Alerts</div>
+    <div class="alert-item high">
+        <div class="alert-icon">🚨</div>
+        <div class="alert-content">
+            <h4>Large Whale Movement</h4>
+            <p>5,000 BTC moved from cold storage to exchange</p>
+            <span class="alert-time">5 minutes ago</span>
+        </div>
+    </div>
+    <div class="alert-item medium">
+        <div class="alert-icon">⚡</div>
+        <div class="alert-content">
+            <h4>Volume Spike Alert</h4>
+            <p>ETH volume 3x above 24h average</p>
+            <span class="alert-time">12 minutes ago</span>
+        </div>
+    </div>
+    <div class="alert-item low">
+        <div class="alert-icon">ℹ️</div>
+        <div class="alert-content">
+            <h4>Market Update</h4>
+            <p>Fear & Greed shifted from Neutral to Greed</p>
+            <span class="alert-time">1 hour ago</span>
+        </div>
+    </div>
+    
+    <!-- Bottom spacing -->
+    <div class="content-end"></div>
+    
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+            <span class="icon">📊</span>
+            Dashboard
+        </a>
+        <a href="#" class="nav-item">
+            <span class="icon">⚡</span>
+            Signals
+        </a>
+        <a href="#" class="nav-item">
+            <span class="icon">📈</span>
+            Analysis
+        </a>
+        <a href="#" class="nav-item">
+            <span class="icon">💼</span>
+            Portfolio
+        </a>
+        <a href="#" class="nav-item">
+            <span class="icon">🔔</span>
+            Alerts
+        </a>
+    </nav>
+</body>
+</html>

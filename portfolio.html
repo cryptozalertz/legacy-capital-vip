@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Legacy Capital VIP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="portal.html"><img src="logo-transparent.png" alt="Legacy Capital VIP" class="logo-img"></a>
+            </div>
+            <div class="nav-links">
+                <a href="portal.html">Portal</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="explore.html">Explore</a>
+                <a href="signals.html">Signals</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="alerts.html">Alerts</a>
+            </div>
+            <div class="user-menu">
+                <span class="vip-badge">VIP</span>
+                <span class="username">Captain</span>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <div class="container">
+            <section class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-wallet"></i> Portfolio Tracker</h2>
+                    <button class="btn-primary">Add Position</button>
+                </div>
+                
+                <!-- Portfolio Summary -->
+                <div class="stats-row" style="margin-bottom: 2rem;">
+                    <div class="stat-card">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="portfolio-value">$125,430</span>
+                            <span class="stat-label">Total Value</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="portfolio-pnl">+8.4%</span>
+                            <span class="stat-label">Total P&L</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-coins"></i>
+                        <div class="stat-info">
+                            <span class="stat-value">12</span>
+                            <span class="stat-label">Positions</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-percentage"></i>
+                        <div class="stat-info">
+                            <span class="stat-value">24h</span>
+                            <span class="stat-label">Best Performer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Table -->
+                <div class="portfolio-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Entry Price</th>
+                                <th>Current Price</th>
+                                <th>P&L</th>
+                                <th>Signal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>BTC</strong></td>
+                                <td>$74,200</td>
+                                <td id="btc-portfolio-price">Loading...</td>
+                                <td class="positive" id="btc-pnl">Loading...</td>
+                                <td><span class="badge buy">HOLD</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>ETH</strong></td>
+                                <td>$2,050</td>
+                                <td id="eth-portfolio-price">Loading...</td>
+                                <td class="positive" id="eth-pnl">Loading...</td>
+                                <td><span class="badge buy">BUY</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SOL</strong></td>
+                                <td>$92.50</td>
+                                <td id="sol-portfolio-price">Loading...</td>
+                                <td class="negative" id="sol-pnl">Loading...</td>
+                                <td><span class="badge sell">SELL</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Asset Allocation -->
+                <div class="section-header" style="margin-top: 3rem;">
+                    <h2><i class="fas fa-chart-pie"></i> Asset Allocation</h2>
+                </div>
+                
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h3>By Asset</h3>
+                        <div class="levels-list">
+                            <div class="level-item">
+                                <span class="level-label">Bitcoin</span>
+                                <span class="level-value">45%</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">Ethereum</span>
+                                <span class="level-value">30%</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">Solana</span>
+                                <span class="level-value">15%</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">Others</span>
+                                <span class="level-value">10%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>By Sector</h3>
+                        <div class="levels-list">
+                            <div class="level-item">
+                                <span class="level-label">Layer 1</span>
+                                <span class="level-value">60%</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">DeFi</span>
+                                <span class="level-value">20%</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">NFT/Gaming</span>
+                                <span class="level-value">12%</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">Infrastructure</span>
+                                <span class="level-value">8%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Performance</h3>
+                        <div class="levels-list">
+                            <div class="level-item">
+                                <span class="level-label">7 Days</span>
+                                <span class="level-value positive">+12.4%</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">30 Days</span>
+                                <span class="level-value positive">+28.7%</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">90 Days</span>
+                                <span class="level-value positive">+45.2%</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">YTD</span>
+                                <span class="level-value positive">+67.8%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-crown"></i>
+                    <span>LEGACY CAPITAL VIP</span>
+                </div>
+                <p class="footer-text">Professional on-chain intelligence for elite traders</p>
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="realtime-data.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Capital VIP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="portal.html"><img src="logo-transparent.png" alt="Legacy Capital VIP" class="logo-img"></a>
+            </div>
+            <div class="nav-links">
+                <a href="portal.html">Portal</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="explore.html">Explore</a>
+                <a href="signals.html">Signals</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="alerts.html">Alerts</a>
+            </div>
+            <div class="user-menu">
+                <span class="vip-badge">VIP</span>
+                <span class="username">Captain</span>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to <span class="gradient-text">Legacy Capital VIP</span></h1>
+                <p class="subtitle">Professional-grade crypto intelligence for elite traders</p>
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="btc-price">$67,234</span>
+                            <span class="stat-label">BTC Price</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-fire"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="fear-greed">72</span>
+                            <span class="stat-label">Fear & Greed</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-signal"></i>
+                        <div class="stat-info">
+                            <span class="stat-value">24</span>
+                            <span class="stat-label">Active Signals</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-percentage"></i>
+                        <div class="stat-info">
+                            <span class="stat-value">+12.4%</span>
+                            <span class="stat-label">VIP Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <div class="container">
+            <!-- Signals Section -->
+            <section id="signals" class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-bolt"></i> Live Signals</h2>
+                    <button class="btn-primary">View All</button>
+                </div>
+                <div class="signals-grid">
+                    <div class="signal-card buy">
+                        <div class="signal-header">
+                            <span class="signal-badge strong-buy">STRONG BUY</span>
+                            <span class="signal-time">2 min ago</span>
+                        </div>
+                        <div class="signal-body">
+                            <h3>BTC/USDT</h3>
+                            <p class="signal-price">Entry: $67,200</p>
+                            <div class="signal-metrics">
+                                <span><i class="fas fa-bullseye"></i> Target: $72,000</span>
+                                <span><i class="fas fa-shield-alt"></i> Stop: $65,800</span>
+                            </div>
+                        </div>
+                        <div class="signal-footer">
+                            <span class="confidence">Confidence: 92%</span>
+                            <button class="btn-action">Trade Now</button>
+                        </div>
+                    </div>
+
+                    <div class="signal-card buy">
+                        <div class="signal-header">
+                            <span class="signal-badge buy">BUY</span>
+                            <span class="signal-time">15 min ago</span>
+                        </div>
+                        <div class="signal-body">
+                            <h3>ETH/USDT</h3>
+                            <p class="signal-price">Entry: $3,450</p>
+                            <div class="signal-metrics">
+                                <span><i class="fas fa-bullseye"></i> Target: $3,800</span>
+                                <span><i class="fas fa-shield-alt"></i> Stop: $3,320</span>
+                            </div>
+                        </div>
+                        <div class="signal-footer">
+                            <span class="confidence">Confidence: 85%</span>
+                            <button class="btn-action">Trade Now</button>
+                        </div>
+                    </div>
+
+                    <div class="signal-card sell">
+                        <div class="signal-header">
+                            <span class="signal-badge sell">SELL</span>
+                            <span class="signal-time">1 hour ago</span>
+                        </div>
+                        <div class="signal-body">
+                            <h3>SOL/USDT</h3>
+                            <p class="signal-price">Entry: $152.30</p>
+                            <div class="signal-metrics">
+                                <span><i class="fas fa-bullseye"></i> Target: $140.00</span>
+                                <span><i class="fas fa-shield-alt"></i> Stop: $158.00</span>
+                            </div>
+                        </div>
+                        <div class="signal-footer">
+                            <span class="confidence">Confidence: 78%</span>
+                            <button class="btn-action">Trade Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Market Analysis -->
+            <section id="analysis" class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-bar"></i> Market Analysis</h2>
+                </div>
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h3>Whale Activity</h3>
+                        <div class="whale-indicator">
+                            <div class="whale-bar">
+                                <div class="whale-progress" style="width: 75%"></div>
+                            </div>
+                            <span class="whale-label">75% Buying Pressure</span>
+                        </div>
+                        <div class="whale-stats">
+                            <div class="whale-stat">
+                                <span class="label">Large Inflows</span>
+                                <span class="value positive">+$234M</span>
+                            </div>
+                            <div class="whale-stat">
+                                <span class="label">Active Whales</span>
+                                <span class="value">47</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Market Sentiment</h3>
+                        <div class="sentiment-gauge">
+                            <div class="gauge-circle">
+                                <span class="gauge-value">72</span>
+                            </div>
+                            <span class="gauge-label">Greed</span>
+                        </div>
+                        <p class="sentiment-text">Market showing strong bullish sentiment with institutional accumulation.</p>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Technical Levels</h3>
+                        <div class="levels-list">
+                            <div class="level-item">
+                                <span class="level-label">BTC Resistance</span>
+                                <span class="level-value">$68,500</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">BTC Support</span>
+                                <span class="level-value">$65,200</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">ETH Resistance</span>
+                                <span class="level-value">$3,600</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">ETH Support</span>
+                                <span class="level-value">$3,280</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Tracker -->
+            <section id="portfolio" class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-wallet"></i> Portfolio Tracker</h2>
+                    <button class="btn-primary">Add Position</button>
+                </div>
+                <div class="portfolio-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Entry Price</th>
+                                <th>Current Price</th>
+                                <th>P&L</th>
+                                <th>Signal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>BTC</strong></td>
+                                <td>$65,400</td>
+                                <td>$67,234</td>
+                                <td class="positive">+2.8%</td>
+                                <td><span class="badge buy">HOLD</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>ETH</strong></td>
+                                <td>$3,280</td>
+                                <td>$3,450</td>
+                                <td class="positive">+5.2%</td>
+                                <td><span class="badge buy">BUY</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SOL</strong></td>
+                                <td>$158.00</td>
+                                <td>$152.30</td>
+                                <td class="negative">-3.6%</td>
+                                <td><span class="badge sell">SELL</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Alerts Section -->
+            <section id="alerts" class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-bell"></i> Recent Alerts</h2>
+                </div>
+                <div class="alerts-list">
+                    <div class="alert-item high">
+                        <div class="alert-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="alert-content">
+                            <h4>Large Whale Movement Detected</h4>
+                            <p>5,000 BTC moved from cold storage to exchange</p>
+                            <span class="alert-time">5 minutes ago</span>
+                        </div>
+                    </div>
+                    <div class="alert-item medium">
+                        <div class="alert-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="alert-content">
+                            <h4>Volume Spike Alert</h4>
+                            <p>ETH volume 3x above 24h average</p>
+                            <span class="alert-time">12 minutes ago</span>
+                        </div>
+                    </div>
+                    <div class="alert-item low">
+                        <div class="alert-icon"><i class="fas fa-info-circle"></i></div>
+                        <div class="alert-content">
+                            <h4>Market Update</h4>
+                            <p>Fear & Greed index shifted from Neutral to Greed</p>
+                            <span class="alert-time">1 hour ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-crown"></i>
+                    <span>LEGACY CAPITAL VIP</span>
+                </div>
+                <p class="footer-text">Professional on-chain intelligence for elite traders</p>
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

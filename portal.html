@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Capital VIP Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="portal.html"><img src="logo-transparent.png" alt="Legacy Capital VIP" class="logo-img"></a>
+            </div>
+            <div class="nav-links">
+                <a href="portal.html" class="active">Portal</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="explore.html">Explore</a>
+                <a href="signals.html">Signals</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="alerts.html">Alerts</a>
+            </div>
+            <div class="user-menu">
+                <span class="vip-badge">VIP</span>
+                <span class="username">Captain</span>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Secondary Navigation - Explore Menu -->
+    <div class="explore-nav">
+        <div class="container">
+            <div class="explore-toggle">
+                <i class="fas fa-compass"></i>
+                <span>Explore</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="explore-menu">
+                <a href="explore.html#market-overview" class="explore-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Market Overview</span>
+                </a>
+                <a href="explore.html#top-movers" class="explore-item">
+                    <i class="fas fa-rocket"></i>
+                    <span>Top Movers</span>
+                </a>
+                <a href="explore.html#whale-watch" class="explore-item">
+                    <i class="fas fa-fish"></i>
+                    <span>Whale Watch</span>
+                </a>
+                <a href="analysis.html#sentiment" class="explore-item">
+                    <i class="fas fa-heart-pulse"></i>
+                    <span>Sentiment</span>
+                </a>
+                <a href="explore.html#heatmap" class="explore-item">
+                    <i class="fas fa-fire"></i>
+                    <span>Heatmap</span>
+                </a>
+                <a href="explore.html#calendar" class="explore-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Economic Calendar</span>
+                </a>
+                <a href="explore.html#news" class="explore-item">
+                    <i class="fas fa-newspaper"></i>
+                    <span>News Feed</span>
+                </a>
+                <a href="explore.html#learn" class="explore-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Learn</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="portal-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to the <span class="gradient-text">VIP Portal</span></h1>
+                <p class="subtitle">Your command center for crypto intelligence and market exploration</p>
+                
+                <!-- Quick Stats Row -->
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <i class="fas fa-bitcoin"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="btc-price">Loading...</span>
+                            <span class="stat-label">BTC Price</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="fear-greed">72</span>
+                            <span class="stat-label">Fear & Greed</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-signal"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="active-signals">24</span>
+                            <span class="stat-label">Active Signals</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-percentage"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="vip-performance">+12.4%</span>
+                            <span class="stat-label">VIP Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Portal Content -->
+    <main class="portal-main">
+        <div class="container">
+            
+            <!-- Explore Section -->
+            <section id="explore" class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-compass"></i> Explore</h2>
+                    <p>Discover market opportunities and insights</p>
+                </div>
+                
+                <div class="explore-grid">
+                    <!-- Market Overview Card -->
+                    <a href="explore.html#market-overview" class="explore-card" id="market-overview">
+                        <div class="explore-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Market Overview</h3>
+                        <p>Global crypto market cap, dominance, and volume analysis</p>
+                        <div class="explore-stats">
+                            <span class="stat" id="market-cap-stat">$2.4T Market Cap</span>
+                            <span class="stat" id="market-change-stat">+5.2% 24h</span>
+                        </div>
+                        <button class="btn-explore">View Overview</button>
+                    </a>
+
+                    <!-- Top Movers Card -->
+                    <a href="explore.html#top-movers" class="explore-card" id="top-movers">
+                        <div class="explore-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Top Movers</h3>
+                        <p>Biggest gainers and losers in the last 24 hours</p>
+                        <div class="explore-stats">
+                            <span class="stat positive">PEPE +45%</span>
+                            <span class="stat negative">LUNC -12%</span>
+                        </div>
+                        <button class="btn-explore">View Movers</button>
+                    </a>
+
+                    <!-- Whale Watch Card -->
+                    <a href="explore.html#whale-watch" class="explore-card" id="whale-watch">
+                        <div class="explore-icon">
+                            <i class="fas fa-fish"></i>
+                        </div>
+                        <h3>Whale Watch</h3>
+                        <p>Track large wallet movements and institutional flows</p>
+                        <div class="explore-stats">
+                            <span class="stat">47 Active Whales</span>
+                            <span class="stat positive">+$234M Inflow</span>
+                        </div>
+                        <button class="btn-explore">Track Whales</button>
+                    </a>
+
+                    <!-- Sentiment Card -->
+                    <a href="analysis.html#sentiment" class="explore-card" id="sentiment">
+                        <div class="explore-icon">
+                            <i class="fas fa-heart-pulse"></i>
+                        </div>
+                        <h3>Market Sentiment</h3>
+                        <p>Social media sentiment, on-chain metrics, and fear index</p>
+                        <div class="explore-stats">
+                            <span class="stat">72 Greed</span>
+                            <span class="stat">Bullish Trend</span>
+                        </div>
+                        <button class="btn-explore">Check Sentiment</button>
+                    </a>
+
+                    <!-- Heatmap Card -->
+                    <a href="explore.html#heatmap" class="explore-card" id="heatmap">
+                        <div class="explore-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Market Heatmap</h3>
+                        <p>Visual representation of market performance by sector</p>
+                        <div class="explore-stats">
+                            <span class="stat">DeFi +8%</span>
+                            <span class="stat">NFT -3%</span>
+                        </div>
+                        <button class="btn-explore">View Heatmap</button>
+                    </a>
+
+                    <!-- Economic Calendar Card -->
+                    <a href="explore.html#calendar" class="explore-card" id="calendar">
+                        <div class="explore-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Economic Calendar</h3>
+                        <p>Upcoming events, Fed decisions, and crypto conferences</p>
+                        <div class="explore-stats">
+                            <span class="stat">3 Events Today</span>
+                            <span class="stat">FOMC Next Week</span>
+                        </div>
+                        <button class="btn-explore">View Calendar</button>
+                    </a>
+
+                    <!-- News Feed Card -->
+                    <a href="explore.html#news" class="explore-card" id="news">
+                        <div class="explore-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <h3>News Feed</h3>
+                        <p>Curated crypto news from top sources in real-time</p>
+                        <div class="explore-stats">
+                            <span class="stat">12 New Articles</span>
+                            <span class="stat">Breaking: ETF</span>
+                        </div>
+                        <button class="btn-explore">Read News</button>
+                    </a>
+
+                    <!-- Learn Card -->
+                    <a href="explore.html#learn" class="explore-card" id="learn">
+                        <div class="explore-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Learn & Earn</h3>
+                        <p>Educational resources, trading guides, and strategies</p>
+                        <div class="explore-stats">
+                            <span class="stat">45 Guides</span>
+                            <span class="stat">12 Courses</span>
+                        </div>
+                        <button class="btn-explore">Start Learning</button>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Live Signals Section -->
+            <section id="signals" class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-bolt"></i> Live Signals</h2>
+                    <button class="btn-primary">View All Signals</button>
+                </div>
+                <div class="signals-grid">
+                    <div class="signal-card buy">
+                        <div class="signal-header">
+                            <span class="signal-badge strong-buy">STRONG BUY</span>
+                            <span class="signal-time">2 min ago</span>
+                        </div>
+                        <div class="signal-body">
+                            <h3>BTC/USDT</h3>
+                            <p class="signal-price">Entry: $67,200</p>
+                            <div class="signal-metrics">
+                                <span><i class="fas fa-bullseye"></i> Target: $72,000</span>
+                                <span><i class="fas fa-shield-alt"></i> Stop: $65,800</span>
+                            </div>
+                        </div>
+                        <div class="signal-footer">
+                            <span class="confidence">Confidence: 92%</span>
+                            <button class="btn-action">Trade Now</button>
+                        </div>
+                    </div>
+
+                    <div class="signal-card buy">
+                        <div class="signal-header">
+                            <span class="signal-badge buy">BUY</span>
+                            <span class="signal-time">15 min ago</span>
+                        </div>
+                        <div class="signal-body">
+                            <h3>ETH/USDT</h3>
+                            <p class="signal-price">Entry: $3,450</p>
+                            <div class="signal-metrics">
+                                <span><i class="fas fa-bullseye"></i> Target: $3,800</span>
+                                <span><i class="fas fa-shield-alt"></i> Stop: $3,320</span>
+                            </div>
+                        </div>
+                        <div class="signal-footer">
+                            <span class="confidence">Confidence: 85%</span>
+                            <button class="btn-action">Trade Now</button>
+                        </div>
+                    </div>
+
+                    <div class="signal-card sell">
+                        <div class="signal-header">
+                            <span class="signal-badge sell">SELL</span>
+                            <span class="signal-time">1 hour ago</span>
+                        </div>
+                        <div class="signal-body">
+                            <h3>SOL/USDT</h3>
+                            <p class="signal-price">Entry: $152.30</p>
+                            <div class="signal-metrics">
+                                <span><i class="fas fa-bullseye"></i> Target: $140.00</span>
+                                <span><i class="fas fa-shield-alt"></i> Stop: $158.00</span>
+                            </div>
+                        </div>
+                        <div class="signal-footer">
+                            <span class="confidence">Confidence: 78%</span>
+                            <button class="btn-action">Trade Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Market Analysis Section -->
+            <section id="analysis" class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-bar"></i> Market Analysis</h2>
+                </div>
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h3>Whale Activity</h3>
+                        <div class="whale-indicator">
+                            <div class="whale-bar">
+                                <div class="whale-progress" style="width: 75%"></div>
+                            </div>
+                            <span class="whale-label">75% Buying Pressure</span>
+                        </div>
+                        <div class="whale-stats">
+                            <div class="whale-stat">
+                                <span class="label">Large Inflows</span>
+                                <span class="value positive">+$234M</span>
+                            </div>
+                            <div class="whale-stat">
+                                <span class="label">Active Whales</span>
+                                <span class="value">47</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Market Sentiment</h3>
+                        <div class="sentiment-gauge">
+                            <div class="gauge-circle">
+                                <span class="gauge-value" id="gauge-value">72</span>
+                            </div>
+                            <span class="gauge-label" id="gauge-label">Greed</span>
+                        </div>
+                        <p class="sentiment-text" id="sentiment-text">Market showing strong bullish sentiment with institutional accumulation.</p>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Technical Levels</h3>
+                        <div class="levels-list">
+                            <div class="level-item">
+                                <span class="level-label">BTC Resistance</span>
+                                <span class="level-value" id="btc-resistance">$68,500</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">BTC Support</span>
+                                <span class="level-value" id="btc-support">$65,200</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">ETH Resistance</span>
+                                <span class="level-value" id="eth-resistance">$3,600</span>
+                            </div>
+                            <div class="level-item">
+                                <span class="level-label">ETH Support</span>
+                                <span class="level-value" id="eth-support">$3,280</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Section -->
+            <section id="portfolio" class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-wallet"></i> Portfolio Tracker</h2>
+                    <button class="btn-primary">Add Position</button>
+                </div>
+                <div class="portfolio-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Entry Price</th>
+                                <th>Current Price</th>
+                                <th>P&L</th>
+                                <th>Signal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>BTC</strong></td>
+                                <td>$65,400</td>
+                                <td>$67,234</td>
+                                <td class="positive">+2.8%</td>
+                                <td><span class="badge buy">HOLD</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>ETH</strong></td>
+                                <td>$3,280</td>
+                                <td>$3,450</td>
+                                <td class="positive">+5.2%</td>
+                                <td><span class="badge buy">BUY</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SOL</strong></td>
+                                <td>$158.00</td>
+                                <td>$152.30</td>
+                                <td class="negative">-3.6%</td>
+                                <td><span class="badge sell">SELL</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Alerts Section -->
+            <section id="alerts" class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-bell"></i> Recent Alerts</h2>
+                </div>
+                <div class="alerts-list">
+                    <div class="alert-item high">
+                        <div class="alert-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="alert-content">
+                            <h4>Large Whale Movement Detected</h4>
+                            <p>5,000 BTC moved from cold storage to exchange</p>
+                            <span class="alert-time">5 minutes ago</span>
+                        </div>
+                    </div>
+                    <div class="alert-item medium">
+                        <div class="alert-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="alert-content">
+                            <h4>Volume Spike Alert</h4>
+                            <p>ETH volume 3x above 24h average</p>
+                            <span class="alert-time">12 minutes ago</span>
+                        </div>
+                    </div>
+                    <div class="alert-item low">
+                        <div class="alert-icon"><i class="fas fa-info-circle"></i></div>
+                        <div class="alert-content">
+                            <h4>Market Update</h4>
+                            <p>Fear & Greed index shifted from Neutral to Greed</p>
+                            <span class="alert-time">1 hour ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-crown"></i>
+                    <span>LEGACY CAPITAL VIP</span>
+                </div>
+                <p class="footer-text">Professional on-chain intelligence for elite traders</p>
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="portal.js"></script>
+    <script src="realtime-data.js"></script>
+</body>
+</html>

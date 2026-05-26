@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - Legacy Capital VIP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="portal.html"><img src="logo-transparent.png" alt="Legacy Capital VIP" class="logo-img"></a>
+            </div>
+            <div class="nav-links">
+                <a href="portal.html">Portal</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="explore.html" class="active">Explore</a>
+                <a href="signals.html">Signals</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="alerts.html">Alerts</a>
+            </div>
+            <div class="user-menu">
+                <span class="vip-badge">VIP</span>
+                <span class="username">Captain</span>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <div class="container">
+            <section class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-compass"></i> Explore Market Opportunities</h2>
+                    <p>Discover insights and track market movements in real-time</p>
+                </div>
+                
+                <div class="explore-grid">
+                    <!-- Market Overview Card -->
+                    <div class="explore-card" id="market-overview">
+                        <div class="explore-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Market Overview</h3>
+                        <p>Global crypto market cap, dominance, and volume analysis</p>
+                        <div class="explore-stats">
+                            <span class="stat" id="market-cap-stat">Loading...</span>
+                            <span class="stat" id="market-change-stat">Loading...</span>
+                        </div>
+                        <button class="btn-explore">View Overview</button>
+                    </div>
+
+                    <!-- Top Movers Card -->
+                    <div class="explore-card" id="top-movers">
+                        <div class="explore-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Top Movers</h3>
+                        <p>Biggest gainers and losers in the last 24 hours</p>
+                        <div class="explore-stats">
+                            <span class="stat positive" id="top-gainer">Loading...</span>
+                            <span class="stat negative" id="top-loser">Loading...</span>
+                        </div>
+                        <button class="btn-explore">View Movers</button>
+                    </div>
+
+                    <!-- Whale Watch Card -->
+                    <div class="explore-card" id="whale-watch">
+                        <div class="explore-icon">
+                            <i class="fas fa-fish"></i>
+                        </div>
+                        <h3>Whale Watch</h3>
+                        <p>Track large wallet movements and institutional flows</p>
+                        <div class="explore-stats">
+                            <span class="stat" id="whale-count">47 Active Whales</span>
+                            <span class="stat positive" id="whale-inflow">+$234M Inflow</span>
+                        </div>
+                        <button class="btn-explore">Track Whales</button>
+                    </div>
+
+                    <!-- Sentiment Card -->
+                    <div class="explore-card" id="sentiment">
+                        <div class="explore-icon">
+                            <i class="fas fa-heart-pulse"></i>
+                        </div>
+                        <h3>Market Sentiment</h3>
+                        <p>Social media sentiment, on-chain metrics, and fear index</p>
+                        <div class="explore-stats">
+                            <span class="stat" id="sentiment-value">Loading...</span>
+                            <span class="stat" id="sentiment-label">Loading...</span>
+                        </div>
+                        <button class="btn-explore">Check Sentiment</button>
+                    </div>
+
+                    <!-- Heatmap Card -->
+                    <div class="explore-card" id="heatmap">
+                        <div class="explore-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Market Heatmap</h3>
+                        <p>Visual representation of market performance by sector</p>
+                        <div class="explore-stats">
+                            <span class="stat positive">DeFi +8%</span>
+                            <span class="stat negative">NFT -3%</span>
+                        </div>
+                        <button class="btn-explore">View Heatmap</button>
+                    </div>
+
+                    <!-- Economic Calendar Card -->
+                    <div class="explore-card" id="calendar">
+                        <div class="explore-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Economic Calendar</h3>
+                        <p>Upcoming events, Fed decisions, and crypto conferences</p>
+                        <div class="explore-stats">
+                            <span class="stat">3 Events Today</span>
+                            <span class="stat">FOMC Next Week</span>
+                        </div>
+                        <button class="btn-explore">View Calendar</button>
+                    </div>
+
+                    <!-- News Feed Card -->
+                    <div class="explore-card" id="news">
+                        <div class="explore-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <h3>News Feed</h3>
+                        <p>Curated crypto news from top sources in real-time</p>
+                        <div class="explore-stats">
+                            <span class="stat">12 New Articles</span>
+                            <span class="stat">Breaking: ETF</span>
+                        </div>
+                        <button class="btn-explore">Read News</button>
+                    </div>
+
+                    <!-- Learn Card -->
+                    <div class="explore-card" id="learn">
+                        <div class="explore-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Learn & Earn</h3>
+                        <p>Educational resources, trading guides, and strategies</p>
+                        <div class="explore-stats">
+                            <span class="stat">45 Guides</span>
+                            <span class="stat">12 Courses</span>
+                        </div>
+                        <button class="btn-explore">Start Learning</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-crown"></i>
+                    <span>LEGACY CAPITAL VIP</span>
+                </div>
+                <p class="footer-text">Professional on-chain intelligence for elite traders</p>
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="realtime-data.js"></script>
+    <script>
+        // Explore page specific updates
+        document.addEventListener('DOMContentLoaded', function() {
+            // Extend RealtimeData for explore page
+            const originalUpdateUI = RealtimeData.prototype.updateUI;
+            RealtimeData.prototype.updateUI = function() {
+                originalUpdateUI.call(this);
+                this.updateExploreExtras();
+            };
+            
+            RealtimeData.prototype.updateExploreExtras = function() {
+                // Update sentiment in explore cards
+                const sentimentValue = document.getElementById('sentiment-value');
+                const sentimentLabel = document.getElementById('sentiment-label');
+                if (sentimentValue) {
+                    sentimentValue.textContent = this.fearGreed;
+                }
+                if (sentimentLabel) {
+                    let label = 'Neutral';
+                    if (this.fearGreed <= 20) label = 'Extreme Fear';
+                    else if (this.fearGreed <= 40) label = 'Fear';
+                    else if (this.fearGreed <= 60) label = 'Neutral';
+                    else if (this.fearGreed <= 80) label = 'Greed';
+                    else label = 'Extreme Greed';
+                    sentimentLabel.textContent = label;
+                }
+                
+                // Update top movers with real data if available
+                // This would need a separate API call for top gainers/losers
+            };
+        });
+    </script>
+</body>
+</html>

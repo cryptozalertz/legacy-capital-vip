@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signals - Legacy Capital VIP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="portal.html"><img src="logo-transparent.png" alt="Legacy Capital VIP" class="logo-img"></a>
+            </div>
+            <div class="nav-links">
+                <a href="portal.html">Portal</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="explore.html">Explore</a>
+                <a href="signals.html" class="active">Signals</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="alerts.html">Alerts</a>
+            </div>
+            <div class="user-menu">
+                <span class="vip-badge">VIP</span>
+                <span class="username">Captain</span>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <div class="container">
+            <section class="portal-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-bolt"></i> Live Trading Signals</h2>
+                    <button class="btn-primary">View All Signals</button>
+                </div>
+                
+                <div class="signals-grid">
+                    <div class="signal-card buy">
+                        <div class="signal-header">
+                            <span class="signal-badge strong-buy">STRONG BUY</span>
+                            <span class="signal-time">2 min ago</span>
+                        </div>
+                        <div class="signal-body">
+                            <h3>BTC/USDT</h3>
+                            <p class="signal-price" id="btc-signal-price">Entry: Loading...</p>
+                            <div class="signal-metrics">
+                                <span><i class="fas fa-bullseye"></i> Target: Loading...</span>
+                                <span><i class="fas fa-shield-alt"></i> Stop: Loading...</span>
+                            </div>
+                        </div>
+                        <div class="signal-footer">
+                            <span class="confidence">Confidence: 92%</span>
+                            <button class="btn-action">Trade Now</button>
+                        </div>
+                    </div>
+
+                    <div class="signal-card buy">
+                        <div class="signal-header">
+                            <span class="signal-badge buy">BUY</span>
+                            <span class="signal-time">15 min ago</span>
+                        </div>
+                        <div class="signal-body">
+                            <h3>ETH/USDT</h3>
+                            <p class="signal-price" id="eth-signal-price">Entry: Loading...</p>
+                            <div class="signal-metrics">
+                                <span><i class="fas fa-bullseye"></i> Target: Loading...</span>
+                                <span><i class="fas fa-shield-alt"></i> Stop: Loading...</span>
+                            </div>
+                        </div>
+                        <div class="signal-footer">
+                            <span class="confidence">Confidence: 85%</span>
+                            <button class="btn-action">Trade Now</button>
+                        </div>
+                    </div>
+
+                    <div class="signal-card sell">
+                        <div class="signal-header">
+                            <span class="signal-badge sell">SELL</span>
+                            <span class="signal-time">1 hour ago</span>
+                        </div>
+                        <div class="signal-body">
+                            <h3>SOL/USDT</h3>
+                            <p class="signal-price" id="sol-signal-price">Entry: Loading...</p>
+                            <div class="signal-metrics">
+                                <span><i class="fas fa-bullseye"></i> Target: Loading...</span>
+                                <span><i class="fas fa-shield-alt"></i> Stop: Loading...</span>
+                            </div>
+                        </div>
+                        <div class="signal-footer">
+                            <span class="confidence">Confidence: 78%</span>
+                            <button class="btn-action">Trade Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signal History -->
+                <div class="section-header" style="margin-top: 3rem;">
+                    <h2><i class="fas fa-history"></i> Recent Signal Performance</h2>
+                </div>
+                
+                <div class="portfolio-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Signal</th>
+                                <th>Entry</th>
+                                <th>Exit</th>
+                                <th>P&L</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>BTC</strong></td>
+                                <td><span class="badge buy">BUY</span></td>
+                                <td>$74,200</td>
+                                <td>$77,640</td>
+                                <td class="positive">+4.6%</td>
+                                <td><span class="badge buy">CLOSED</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>ETH</strong></td>
+                                <td><span class="badge buy">BUY</span></td>
+                                <td>$2,050</td>
+                                <td>$2,140</td>
+                                <td class="positive">+4.4%</td>
+                                <td><span class="badge buy">CLOSED</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SOL</strong></td>
+                                <td><span class="badge sell">SELL</span></td>
+                                <td>$92.50</td>
+                                <td>$87.64</td>
+                                <td class="positive">+5.3%</td>
+                                <td><span class="badge buy">CLOSED</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-crown"></i>
+                    <span>LEGACY CAPITAL VIP</span>
+                </div>
+                <p class="footer-text">Professional on-chain intelligence for elite traders</p>
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="realtime-data.js"></script>
+</body>
+</html>

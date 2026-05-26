@@ -1,0 +1,341 @@
+/* Legacy Capital VIP Portal Styles */
+
+/* Explore Navigation */
+.explore-nav {
+    background: rgba(0, 0, 0, 0.98);
+    border-bottom: 1px solid var(--border);
+    position: fixed;
+    width: 100%;
+    top: 470px;
+    z-index: 999;
+    padding: 0.5rem 0;
+}
+
+.explore-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    width: fit-content;
+}
+
+.explore-toggle i:first-child {
+    font-size: 1.25rem;
+}
+
+.explore-toggle .fa-chevron-down {
+    transition: transform 0.3s;
+    font-size: 0.875rem;
+}
+
+.explore-toggle:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.explore-menu {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+    scrollbar-width: none;
+}
+
+.explore-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.explore-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.3s;
+}
+
+.explore-item:hover {
+    background: var(--card-hover);
+    color: var(--text);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.explore-item i {
+    color: var(--primary);
+}
+
+/* Portal Hero */
+.portal-hero {
+    padding: 590px 0 60px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+}
+
+.portal-hero .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+/* Portal Main */
+.portal-main {
+    padding: 40px 0;
+}
+
+.portal-section {
+    margin-bottom: 4rem;
+}
+
+.portal-section .section-header {
+    margin-bottom: 2rem;
+}
+
+.portal-section .section-header h2 {
+    font-size: 1.75rem;
+}
+
+.portal-section .section-header p {
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+/* Explore Grid */
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.explore-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+a.explore-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.explore-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+}
+
+.explore-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #f3f3f3 0%, #e0e0e0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.explore-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.explore-card > p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.explore-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.explore-stats .stat {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    background: var(--dark);
+    border-radius: 20px;
+    color: var(--text-muted);
+}
+
+.explore-stats .stat.positive {
+    color: var(--success);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.explore-stats .stat.negative {
+    color: var(--danger);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.btn-explore {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.btn-explore:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Active Navigation States */
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .explore-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .explore-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .portal-hero .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .signals-grid,
+    .analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .explore-nav {
+        top: 60px;
+    }
+    
+    .explore-menu {
+        gap: 0.25rem;
+    }
+    
+    .explore-item {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+    }
+    
+    .portal-hero {
+        padding: 120px 0 40px;
+    }
+    
+    .portal-hero .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .explore-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-row,
+    .signals-grid,
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-table {
+        overflow-x: auto;
+    }
+    
+    .navbar .container {
+        height: 60px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section Animations */
+.portal-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.portal-section:nth-child(1) { animation-delay: 0.1s; }
+.portal-section:nth-child(2) { animation-delay: 0.2s; }
+.portal-section:nth-child(3) { animation-delay: 0.3s; }
+.portal-section:nth-child(4) { animation-delay: 0.4s; }
+.portal-section:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Explore Card Hover Effects */
+.explore-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #f3f3f3 0%, #e0e0e0 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    border-radius: 16px 16px 0 0;
+}
+
+.explore-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.explore-card:hover::before {
+    transform: scaleX(1);
+}
