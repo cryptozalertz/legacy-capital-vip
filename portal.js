@@ -268,32 +268,6 @@ class SectionReveal {
     }
 }
 
-// Scroll Effect for Logo
-class ScrollLogoEffect {
-    constructor() {
-        this.logoSection = document.getElementById('logo-section');
-        this.logoMain = document.getElementById('logo-main');
-        this.scrollThreshold = 100;
-        this.init();
-    }
-    
-    init() {
-        window.addEventListener('scroll', () => this.handleScroll());
-        // Initial check
-        this.handleScroll();
-    }
-    
-    handleScroll() {
-        const scrollY = window.scrollY;
-        
-        if (scrollY > this.scrollThreshold) {
-            this.logoSection.classList.add('scrolled');
-        } else {
-            this.logoSection.classList.remove('scrolled');
-        }
-    }
-}
-
 // Initialize Portal
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
@@ -302,7 +276,6 @@ document.addEventListener('DOMContentLoaded', function() {
     new PortalNavigation();
     new PriceTicker();
     new SectionReveal();
-    new ScrollLogoEffect();
     
     // Add loading animation to explore buttons
     document.querySelectorAll('.btn-explore').forEach(btn => {

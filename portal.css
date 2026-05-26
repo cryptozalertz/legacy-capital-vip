@@ -1,104 +1,14 @@
 /* Legacy Capital VIP Portal Styles */
 
-/* Logo Section - Above Navbar */
-.logo-section {
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1001;
-    padding: 20px 0;
-    transition: all 0.4s ease;
-    text-align: center;
-}
-
-.logo-section .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-main {
-    height: 400px;
-    width: auto;
-    object-fit: contain;
-    transition: all 0.4s ease;
-}
-
-.logo-section.scrolled {
-    padding: 5px 0;
-}
-
-.logo-section.scrolled .logo-main {
-    height: 50px;
-}
-
-/* Navbar with Centered Logo */
-.navbar {
-    transition: all 0.4s ease;
-    position: fixed;
-    top: 440px;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    position: relative;
-}
-
-.nav-left, .nav-right {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.nav-left a, .nav-right a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-}
-
-.nav-left a:hover, .nav-right a:hover,
-.nav-left a.active, .nav-right a.active {
-    color: var(--text);
-}
-
-.nav-left a.active::after, .nav-right a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(135deg, #f3f3f3 0%, #e0e0e0 100%);
-}
-
 /* Explore Navigation */
 .explore-nav {
     background: rgba(0, 0, 0, 0.98);
     border-bottom: 1px solid var(--border);
     position: fixed;
     width: 100%;
-    top: 500px;
+    top: 470px;
     z-index: 999;
     padding: 0.5rem 0;
-    transition: top 0.4s ease;
-}
-
-.logo-section.scrolled ~ .explore-nav {
-    top: 60px;
 }
 
 .explore-toggle {
@@ -166,12 +76,8 @@
 
 /* Portal Hero */
 .portal-hero {
-    padding: 620px 0 60px;
+    padding: 590px 0 60px;
     background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
-}
-
-.logo-section.scrolled ~ .portal-hero {
-    padding: 140px 0 60px;
 }
 
 .portal-hero .hero-content h1 {
@@ -320,10 +226,6 @@ a.explore-card {
     .explore-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
-    .nav-left, .nav-right {
-        gap: 1rem;
-    }
 }
 
 @media (max-width: 1024px) {
@@ -342,14 +244,6 @@ a.explore-card {
     .signals-grid,
     .analysis-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .nav-left, .nav-right {
-        gap: 0.75rem;
-    }
-    
-    .nav-left a, .nav-right a {
-        font-size: 0.875rem;
     }
 }
 
@@ -393,12 +287,8 @@ a.explore-card {
         height: 60px;
     }
     
-    .nav-left, .nav-right {
+    .nav-links {
         display: none;
-    }
-    
-    .logo-center .logo-img {
-        height: 50px;
     }
 }
 
