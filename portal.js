@@ -6,15 +6,15 @@ class ExploreMenu {
         this.toggle = document.querySelector('.explore-toggle');
         this.menu = document.querySelector('.explore-menu');
         this.isOpen = true; // Default open
-        
+
         this.init();
     }
-    
+
     init() {
         if (this.toggle) {
             this.toggle.addEventListener('click', () => this.toggleMenu());
         }
-        
+
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.explore-nav') && this.isOpen) {
@@ -22,7 +22,7 @@ class ExploreMenu {
             }
         });
     }
-    
+
     toggleMenu() {
         if (this.isOpen) {
             this.closeMenu();
@@ -30,7 +30,7 @@ class ExploreMenu {
             this.openMenu();
         }
     }
-    
+
     openMenu() {
         if (this.menu) {
             this.menu.style.display = 'flex';
@@ -44,7 +44,7 @@ class ExploreMenu {
         }
         this.isOpen = true;
     }
-    
+
     closeMenu() {
         if (this.menu) {
             this.menu.style.opacity = '0';
@@ -65,7 +65,7 @@ class ExploreCards {
         this.cards = document.querySelectorAll('.explore-card');
         this.init();
     }
-    
+
     init() {
         this.cards.forEach(card => {
             // Add click handler
@@ -73,21 +73,21 @@ class ExploreCards {
                 const cardId = card.id;
                 this.handleCardClick(cardId);
             });
-            
+
             // Add hover animation
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-8px)';
             });
-            
+
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
             });
         });
     }
-    
+
     handleCardClick(cardId) {
         console.log(`Exploring: ${cardId}`);
-        
+
         // Show loading state
         const card = document.getElementById(cardId);
         if (card) {
@@ -95,18 +95,18 @@ class ExploreCards {
             const originalText = btn.textContent;
             btn.textContent = 'Loading...';
             btn.disabled = true;
-            
+
             // Simulate content loading
             setTimeout(() => {
                 btn.textContent = originalText;
                 btn.disabled = false;
-                
+
                 // Scroll to section or show modal
                 this.showExploreContent(cardId);
             }, 800);
         }
     }
-    
+
     showExploreContent(cardId) {
         // Create modal or expand section
         const modal = document.createElement('div');
@@ -123,19 +123,19 @@ class ExploreCards {
                 </div>
             </div>
         `;
-        
+
         document.body.appendChild(modal);
-        
+
         // Close modal handler
         modal.querySelector('.modal-close').addEventListener('click', () => {
             modal.remove();
         });
-        
+
         modal.querySelector('.modal-overlay').addEventListener('click', () => {
             modal.remove();
         });
     }
-    
+
     getCardTitle(cardId) {
         const titles = {
             'market-overview': 'Market Overview',
@@ -158,7 +158,7 @@ class PortalNavigation {
         this.sections = document.querySelectorAll('.portal-section');
         this.init();
     }
-    
+
     init() {
         // Smooth scroll for nav links
         this.navLinks.forEach(link => {
@@ -172,7 +172,7 @@ class PortalNavigation {
                             behavior: 'smooth',
                             block: 'start'
                         });
-                        
+
                         // Update active state
                         this.navLinks.forEach(l => l.classList.remove('active'));
                         link.classList.add('active');
@@ -180,21 +180,21 @@ class PortalNavigation {
                 }
             });
         });
-        
+
         // Update active nav on scroll
         window.addEventListener('scroll', () => {
             this.updateActiveNav();
         });
     }
-    
+
     updateActiveNav() {
         const scrollPos = window.scrollY + 200;
-        
+
         this.sections.forEach(section => {
             const top = section.offsetTop;
             const height = section.offsetHeight;
             const id = section.getAttribute('id');
-            
+
             if (scrollPos >= top && scrollPos < top + height) {
                 this.navLinks.forEach(link => {
                     link.classList.remove('active');
@@ -217,25 +217,25 @@ class PriceTicker {
         };
         this.init();
     }
-    
+
     init() {
         // Update prices every 30 seconds
         setInterval(() => this.updatePrices(), 30000);
-        
+
         // Initial update
         this.updatePrices();
     }
-    
+
     updatePrices() {
         // Simulate price updates (replace with real API)
         const btcBase = 67234;
         const variation = (Math.random() - 0.5) * 200;
         const newPrice = btcBase + variation;
-        
+
         if (this.prices.btc) {
             this.prices.btc.textContent = `$${newPrice.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`;
             this.prices.btc.style.color = variation > 0 ? 'var(--success)' : 'var(--danger)';
-            
+
             setTimeout(() => {
                 this.prices.btc.style.color = '';
             }, 1000);
@@ -249,7 +249,7 @@ class SectionReveal {
         this.sections = document.querySelectorAll('.portal-section');
         this.init();
     }
-    
+
     init() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -261,7 +261,7 @@ class SectionReveal {
         }, {
             threshold: 0.1
         });
-        
+
         this.sections.forEach(section => {
             observer.observe(section);
         });
@@ -274,10 +274,11 @@ class LogoScrollEffect {
         this.logoHeader = document.getElementById('logo-header');
         this.logoImg = document.getElementById('logo-header-img');
         this.exploreNav = document.querySelector('.explore-nav');
+        this.portalHero = document.querySelector('.portal-hero');
         this.scrollThreshold = 50;
         this.init();
     }
-    
+
     init() {
         window.addEventListener('scroll', () => this.handleScroll());
         this.handleScroll();
@@ -289,16 +290,20 @@ class LogoScrollEffect {
         if (scrollY > this.scrollThreshold) {
             this.logoHeader.style.padding = '8px 0';
             this.logoImg.style.height = '50px';
-            this.logoHeader.style.top = '60px';
             if (this.exploreNav) {
                 this.exploreNav.style.top = '126px';
             }
+            if (this.portalHero) {
+                this.portalHero.style.paddingTop = '166px';
+            }
         } else {
             this.logoHeader.style.padding = '20px 0';
-            this.logoImg.style.height = '120px';
-            this.logoHeader.style.top = '60px';
+            this.logoImg.style.height = '140px';
             if (this.exploreNav) {
-                this.exploreNav.style.top = '220px';
+                this.exploreNav.style.top = '240px';
+            }
+            if (this.portalHero) {
+                this.portalHero.style.paddingTop = '280px';
             }
         }
     }
@@ -313,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
     new PriceTicker();
     new SectionReveal();
     new LogoScrollEffect();
-    
+
     // Add loading animation to explore buttons
     document.querySelectorAll('.btn-explore').forEach(btn => {
         btn.addEventListener('click', function(e) {
@@ -321,14 +326,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const originalText = this.textContent;
             this.textContent = 'Loading...';
             this.disabled = true;
-            
+
             setTimeout(() => {
                 this.textContent = originalText;
                 this.disabled = false;
             }, 1500);
         });
     });
-    
+
     console.log('Legacy Capital VIP Portal initialized');
 });
 
